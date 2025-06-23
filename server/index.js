@@ -56,7 +56,7 @@ app.post("/new", (req, res) => {
   notas.push(notaNota);
   saveNotas(notas);
 
-  res.status(201).json(notaNota);
+  res.status(201).json(novaNota);
 });
 
 // 🔹 PUT /update/:id → atualiza uma nota
