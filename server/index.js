@@ -8,7 +8,7 @@ const { FILE } = require("dns");
 app.use(cors());
 app.use(express.json());
 
-const FILE_PATH = ".notas.json";
+const FILE_PATH = __dirname + "/notas.json";
 
 function readNotes() {
   if (!fs.existsSync(FILE_PATH)) {
