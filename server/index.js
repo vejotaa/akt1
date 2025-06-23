@@ -46,7 +46,7 @@ app.post("/new", (req, res) => {
   if (!titulo || !texto) {
     return res.status(400).json({ error: "Titulo e texto sao obrigatorios" });
   }
-  const notas = readNotas();
+  const notas = readNotes();
   const novaNota = {
     id: Date.now().toString(),
     titulo,
