@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [data, setData] = useState({});
   useEffect(() => {
-    fetch("/data")
+    fetch("https://akt1-api.onrender.com/data")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
