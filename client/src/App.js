@@ -5,8 +5,16 @@ function App() {
   const [data, setData] = useState({});
   useEffect(() => {
     fetch("https://akt1-api.onrender.com/data")
-      .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => setData(data))
+      .catch((err) => {
+        console.error("Fetch error:", err);
+      });
   }, []);
 
   return (
